@@ -1,0 +1,18 @@
+@media (max-width:900px) {
+    header {
+        height: 70px;
+    }
+    .menu-btn {
+        top: 16px;
+        right: 40px;
+    }
+}
+@media (max-width:500px) {
+    header {
+        height: 50px;
+    }
+    .menu-btn {
+        top: 6px;
+        right: 20px;
+    }
+}
