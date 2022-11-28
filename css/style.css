@@ -259,7 +259,7 @@ main {
     width: 100%;
     height: calc(var(--index)*8);
     position: relative;
-    z-index: 10;
+    z-index: 4;
     top: calc(var(--index)*-5);
     background-position: center;
     background-size: cover;
