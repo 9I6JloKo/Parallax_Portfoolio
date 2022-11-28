@@ -11,6 +11,9 @@
 ::-webkit-scrollbar{
     display: none;
 }
+:root {
+    --index: calc(1vw + 1vh)
+}
 html {
     scroll-behavior: smooth;
     box-sizing: border-box;
@@ -61,7 +64,6 @@ header {
     height: 96px;
     position: absolute;
     top: 0;
-    opacity: 0;
     transition: ease all .3s;
 }
 
@@ -88,7 +90,7 @@ header {
     font-weight: 600;
     font-size: 1.5em;
     text-transform: capitalize;
-    color: #000;
+    color: white;
     text-shadow: 2px 3px 9px rgba(0, 0, 0, 0.25);
 }
 
@@ -106,12 +108,13 @@ header {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 1em;
-    color: #3E3E3E;
     cursor: pointer;
 }
 
 .links li a {
     transition-duration: 0.1s;
+    color: white;
+    text-shadow: 0 0 50px rgb(255, 255, 255), 2px 2px 3px rgb(0, 0, 0);
 }
 
 .links li :hover {
@@ -143,7 +146,7 @@ header {
     position: absolute;
     width: 100%;
     height: 2px;
-    background-color: #3E3E3E;
+    background-color: white;
     transition-duration: .2s;
 }
 .menu-btn > span::before {
@@ -153,11 +156,6 @@ header {
 .menu-btn > span::after {
     content: '';
     top: 8px;
-}
-.menu-btn.chat_active > .span_burger,
-.menu-btn.chat_active > .span_burger::before,
-.menu-btn.chat_active > .span_burger::after{
-    background-color: white;
 }
 .menubox {
     position: fixed;
@@ -206,15 +204,26 @@ header {
     opacity: 0;
     transition-timing-function: cubic-bezier(.86,-0.01,0,.99);
 }
+.menuDown {
+
+}
+.menu-btn.menuDown > span,
+.menu-btn.menuDown > span::before,
+.menu-btn.menuDown > span::after {
+    background-color: black;
+}
 #menu-toggle:checked ~ .menu-btn > span{
     transform: rotate(45deg);
+    background-color: black;
 }
 #menu-toggle:checked ~ .menu-btn > span::before{
     top: 0;
     opacity: 0;
+    background-color: black;
 }
 #menu-toggle:checked ~ .menu-btn > span::after{
     top: 0;
+    background-color: black;
     transform: rotate(90deg);
 }
 .menubox.active {
@@ -235,18 +244,6 @@ main {
     overflow: hidden;
     position: relative;
 }
-.layers::after {
-    content: '';
-    width: 100%;
-    height: 100%;
-    z-index: 100;
-    position: absolute;
-    bottom: -1000px;
-    background-image: url(img/Ресурс\ 19.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 .main-article {
     z-index: 95;
 }
@@ -263,20 +260,38 @@ main {
     min-height: 100vh;
 }
 .layers_base {
-    transform: translate3d(0,calc(var(--scrollTop) / 1.5),0);
+    z-index: 0;
+    transform: translate3d(0,calc(var(--scrollTop) / 1.2),0);
 }
 .layers_middle {
-    transform: translate3d(0,calc(var(--scrollTop) / 2.3),0);
+    transform: translate3d(0,calc(var(--scrollTop) / 2.0),0);
 }
 .layers_front_one {
+    z-index: 2;
     transform: translate3d(0,calc(var(--scrollTop) / 2.6),0);
 }
 .layers_front {
-    transform: translate3d(0,calc(var(--scrollTop) / 3.0),0);
+    z-index: 2;
+    transform: translate3d(0,calc(var(--scrollTop) / 4.0),0);
 }
 .layers_front_front {
+    z-index: 2;
     transform: translate3d(0,calc(var(--scrollTop) / 7),0);
 }
 .layers_front_blick {
-    transform: translate3d(0,calc(var(--scrollTop) / 30),0);
+    z-index: 2;
+}
+.layer_header {
+    z-index: 1;
+    transform: translate3d(0,calc(var(--scrollTop) / 2.1),0);
+    letter-spacing: calc(var(--index)/2);
+    margin-bottom: 1vh;
+    will-change: transform;
+    text-shadow: 0 0 30px rgb(255, 255, 255), 5px 5px 3px rgb(0, 0, 0);
+}
+.layers_title {
+    font-size: calc(var(--index)*5);
+}
+.layers_caption {
+    font-size: calc(var(--index)*2);
 }

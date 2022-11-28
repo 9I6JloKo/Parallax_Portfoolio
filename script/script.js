@@ -7,22 +7,12 @@ $(document).ready(() => {
             $('.menubox').toggleClass('active');
         }
     });
-    $(window).scroll(e => {
-        document.body.style.cssText = `--scrollTop: ${this.scrollY}px`;
-    })
     $(".menu-item").click(function () {
         $("#menu-toggle").prop('checked', false);
         $('.menubox').toggleClass('active');
     });
     $('.menu-btn').click(function () {
         $('.menubox').toggleClass('active');
-        if($('#assistant').hasClass('active')){
-            if(!$('.menubox').hasClass('active') && $(window).width() <= 400){
-                $(".menu-btn").addClass('chat_active');
-            }else{
-                $(".menu-btn").removeClass('chat_active');
-            }
-        }
     });
     $('#close_menu').click(() => {
         $("#menu-toggle").prop('checked', false);
@@ -39,16 +29,6 @@ $(document).ready(() => {
         }
     });
     function headerChange() {
-        if($(window).width() >= 401) {
-            $(".menu-btn").removeClass('chat_active');
-        }else{
-            if($('#assistant').hasClass('active')){
-                $(".menu-btn").addClass('chat_active');
-                if($('.menubox').hasClass('active')){
-                    $(".menu-btn").removeClass('chat_active');
-                }
-            }
-        }
         if ($(window).width() >= 601) {
             $('header').removeAttr('style');
             $('.logo').removeAttr('style');
@@ -63,15 +43,34 @@ $(document).ready(() => {
                     'margin-left': '12.5vw',
                     'margin-right': '10px'
                 });
+                $('.logo_name').css({
+                    'color':'black'
+                });
+                $('.links li a').css({
+                    'color':'black',
+                    'text-shadow':'unset'
+                });
+                $('.menu-btn').addClass('menuDown');
                 $('.links').css({ 'margin-left': '50px' });
             } else {
+                $('.menu-btn').removeClass('menuDown');
                 $('header').removeAttr('style');
+                $('.logo_name').removeAttr('style');
+                $('.links li a').removeAttr('style');
                 if ($(".burger-menu").css('display') != 'block') {
                     $('.links').removeAttr('style');
                 }
             }
         }
         else {
+            $('.logo_name').css({
+                'color':'black'
+            });
+            $('.links li a').css({
+                'color':'black',
+                'text-shadow':'unset'
+            });
+            $('.menu-btn').addClass('menuDown');
             $('header').css({
                 'background-color': '#fff',
                 'position': 'fixed',
@@ -83,6 +82,7 @@ $(document).ready(() => {
             });
             $('.links').css({ 'margin-left': '50px' });
         }
+        document.body.style.cssText = `--scrollTop: ${this.scrollY}px`;
         // $('.menubox').css({'padding-top': '125px', 'z-index': 5});
     }
     // -----------------------------------
