@@ -8,7 +8,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
         integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="script/script.js"></script>
+    <script src="libs/gsap/gsap.min.js" defer></script>
+    <script src="libs/gsap/ScrollTrigger.min.js" defer></script>
+    <script src="libs/gsap/ScrollSmoother.min.js" defer></script>
+    <script src="script/script.js" defer></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/media.css">
     <title>MAKSIM GRIŠIN</title>
@@ -22,28 +25,21 @@
         </label>
         <div class="menubox">
             <a class="menu-item" href="#top">Home</a>
-            <a class="menu-item" href="#advantage-page">Advantages</a>
-            <a class="menu-item" href="#topic-page">Topic</a>
-            <a class="menu-item" href="#consultation-page">Consultation</a>
-            <a class="menu-item" href="#faq-page">FAQ</a>
+            <a class="menu-item" href="#About">About me</a>
         </div>
     </div>
     <header>
-        <a class="logo" href="#top">
-            <span class="logo_name">Portfoolio</span>
-        </a>
+            <span class="logo_name">My life</span>
         <ul class="links">
-            <li class="pages home_page"><a href="#top">Home</a></li>
-            <li class="pages advantage_page"><a href="#advantage-page">Advantages</a></li>
-            <li class="pages topic_page"><a href="#topic-page">Topic</a></li>
-            <li class="pages consultation_page"><a href="#consultation-page">Consultation</a></li>
-            <li class="pages faq_page"><a href="#faq-page">FAQ</a></li>
+            <li class="pages"><a href="#top">Home</a></li>
+            <li class="pages"><a href="#About">About me</a></li>
+            <li class="pages"><a href="https://maksimgrisin.weebly.com">--Portfoolio--</a></li>
         </ul>
     </header>
     <main>
         <div id="top" class="layers">
             <div class="layer_header">
-                <div class="layers_title">Portfoolio</div>
+                <div class="layers_title">LIFE</div>
                 <div class="layers_caption">Maksim Grišin</div>
             </div>
             <div class="layer layers_base" style="background-image: url(img/Ресурс\ 8.png)"></div>
@@ -53,13 +49,48 @@
             <div class="layer layers_front_blick" style="background-image: url(img/Ресурс\ 12.png)"></div>
         </div>
         <div id="ground" style="background-image: url(img/ground.png)"></div>
-        <article class="main-article" style="background-image: url(img/dungeon.jpg)">
+        <article  id="About" class="main-article">
+            <div class="backgroundArticle"></div>
             <div class="main-article_content">
-                <h2 class="main-article_content">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, amet.</p>
+                <h2 class="main-article_content gs_reveal_fromLeft gs_reveal">
+                    <p><b>ABOUT ME</b><br>I'm Max and I wanna tell you more about my life. So <strong>LET'S GET IT STARTED!</strong></p>
+                </h2>
+                <div class="img_div gs_reveal_fromRight gs_reveal" style="background-image: url(img/AboutMe.jpeg)"></div>
+            </div>
+            <div class="main-article_content">
+                <div class="img_div gs_reveal_fromLeft gs_reveal" style="background-image: url(img/ivkhk.png)"></div>
+                <h2 class="main-article_content gs_reveal_fromRight gs_reveal">
+                    <p><b>IVKHK</b><br>I'm on a 3rd year of studying programming. You can check my main portfoolio, as well.<br><strong>Link is here</strong> -> <a style="color:white;text-decoration: underline;" href="https://maksimgrisin.weebly.com">https://maksimgrisin.weebly.com</a></p>
                 </h2>
             </div>
-            <div class="copy">©</div>
+            <div class="main-article_content">
+                <h2 class="main-article_content gs_reveal_fromLeft gs_reveal">
+                    <p><b>GUITAR</b><br>Also I like playing the guitar. I had at least 4 different guitars for all time, such as acoustic with metal strings and neylon strings.</p>
+                </h2>
+                <div class="img_div gs_reveal_fromRight gs_reveal" style="background-image: url(img/guitars.jpeg)">
+                </div>
+            </div>
+            <div class="main-article_content">
+                <div class="img_div gs_reveal_fromLeft gs_reveal" style="background-image: url(img/woman.jpeg)"></div>
+                <div class="img_div gs_reveal_fromLeft gs_reveal" style="background-image: url(img/man.jpeg)"></div>
+                <h2 class="main-article_content gs_reveal_fromRight gs_reveal">
+                    <p><b>DRAWING</b><br>Sometimes I'm trying to draw. People say that not so bad, idk maybe they are right.</p>
+                </h2>
+            </div>
+            <div class="main-article_content">
+                <h2 class="main-article_content gs_reveal_fromLeft gs_reveal">
+                    <p><b>WORKOUT</b><br>Throughout my life, I keep myself in good shape(e.g. workout and calisthenics). Now I go to a sports club in Jõhvi</p>
+                </h2>
+                <div class="img_div gs_reveal_fromRight gs_reveal" style="background-image: url(img/Climbing-the-Hill-The-Ultimate-Calisthenics-Transformation.jpg)">
+                </div>
+            </div>
+            <div class="main-article_content">
+                <div class="img_div gs_reveal_fromLeft gs_reveal" style="background-image: url(img/black-lab-favorite-dog-main-220315-e8e0ee.jpg)"></div>
+                <h2 class="main-article_content gs_reveal_fromRight gs_reveal">
+                    <p><b>Pets</b><br>I don't have any pets but I want to get someone for example dog or rat. But there's a problem. I'm allergic to wool.</p>
+                </h2>
+            </div>
+            <div class="copy">© 2022 Parallax_Portfoolio. All rights reserved.</div>
         </article>
     </main>
 </body>
