@@ -6,10 +6,18 @@
         top: 16px;
         right: 40px;
     }
+    .main-article_content_h2 {
+        flex-direction: column;
+        width: 90%;
+        margin-bottom: calc(var(--index)*3);
+        text-align: center;
+    }
     .main-article_content {
         flex-direction: column;
         width: 90%;
         background-color: #30303033;
+        padding-top: calc(var(--index)*3);
+        padding-bottom: calc(var(--index)*3);
         margin-bottom: calc(var(--index)*5);
         text-align: center;
     }

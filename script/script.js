@@ -1,12 +1,15 @@
 $(window).scroll(e => {
-    document.body.style.cssText += `--scrollTop: ${this.scrollY}px`;
+    $(':root').css({
+        '--scrollTop': `${this.scrollY}px`
+    })
 })
-document.addEventListener( 'DOMContentLoaded', function () {
-    new Splide( '#image-slider', {
-          cover      : true,
-          heightRatio: 0.5,
-    } ).mount();
-  } );
+document.addEventListener('mousemove', function(e) {
+    let x = e.clientX / window.innerWidth;
+    let y = e.clientY / window.innerHeight;
+    $('.main-article_content').css({
+        'transform': 'translate3d(-'+x*10+'px, -'+y*10+'px, 0)'
+    })
+})
 $(document).ready(() => {
     // Header logic
     $(window).click(e => {
