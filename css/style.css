@@ -311,7 +311,7 @@ main {
 .main-article {
     display: flex;
     min-height: 100vh;
-    background-image: url(../img/Free-Topographic-Map-Seamless-pattern.jpg); 
+    background-image: url(../img/167287-akva-treugolnik-pryamougolnik-simmetriya-elektrik-7680x4320.png); 
     height: auto;
     background-size: cover;
     background-position: center;
@@ -325,7 +325,7 @@ main {
     justify-content: center;
     align-items: center;
     width: calc(var(--index)*45);
-    padding-top: calc(var(--index)*5);
+    padding-top: calc(var(--index)*3);
     padding-bottom: 20px;
     border-radius: 10px 20px 10px 20px/ 20px 10px 20px 10px;
 }
@@ -353,4 +353,7 @@ strong {
 }
 b {
     color: aqua;
+}
+.copy {
+    margin-top: 10%;
 }

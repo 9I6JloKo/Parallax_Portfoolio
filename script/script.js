@@ -130,7 +130,7 @@ $(document).ready(() => {
         elem.style.transform = "translate(" + x + "%, " + y + "px)";
         elem.style.opacity = "0";
         gsap.fromTo(elem, {x: x, y: y, autoAlpha: 0}, {
-          duration: 1.5, 
+          duration: 2.5, 
           x: 0,
           y: 0, 
           autoAlpha: 1, 
