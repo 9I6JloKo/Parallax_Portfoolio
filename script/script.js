@@ -4,10 +4,10 @@ $(window).scroll(e => {
     })
 })
 document.addEventListener('mousemove', function(e) {
-    let x = e.clientX / window.innerWidth;
-    let y = e.clientY / window.innerHeight;
+    let x = ((window.innerWidth/2) - e.clientX);
+    let y = ((window.innerHeight/2) - e.clientY);
     $('.main-article_content').css({
-        'transform': 'translate3d(-'+x*10+'px, -'+y*10+'px, 0)'
+        'transform': 'translate3d('+x/170+'px, '+y/90+'px, 0)'
     })
 })
 $(document).ready(() => {
